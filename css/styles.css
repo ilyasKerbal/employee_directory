@@ -26,6 +26,13 @@ header {
     text-align: center;
 }
 
+#status {
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
 header input {
     width: 80%;
     max-width: 450px;
@@ -42,9 +49,8 @@ header input:focus {
 }
 
 .employees-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .employee-item {
@@ -53,7 +59,6 @@ header input:focus {
     justify-content: flex-start;
     align-items: center;
     background-color: white;
-    margin: .5rem 0 1rem 0;
     padding: 1rem;
     border-radius: 5px;
 }
@@ -94,16 +99,18 @@ footer {
     min-height: 40px;
     text-align: center;
     color: lightgray;
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
-    .employee-item {
-        flex-basis: 46%;
+    .employees-list {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
     }
 }
 
 @media (min-width: 1024px) {
-    .employee-item {
-        flex-basis: 30%;
+    .employees-list {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
