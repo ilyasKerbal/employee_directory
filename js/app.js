@@ -51,5 +51,10 @@ $(document).ready(function(){
         }else {
             $(".employee-item").show();
         }
+        if($(".employee-item:not(:hidden)").length === 0){
+            statusParagraph.style.display = "";
+        }else{
+            statusParagraph.style.display = "none";
+        }
     });
 });
