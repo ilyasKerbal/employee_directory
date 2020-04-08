@@ -51,6 +51,7 @@ header input:focus {
 .employees-list {
     display: grid;
     grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
 }
 
 .employee-item {
@@ -101,6 +102,7 @@ footer {
     color: lightgray;
     margin-top: 1rem;
 }
+
 
 @media (min-width: 768px) {
     .employees-list {
