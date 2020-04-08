@@ -32,4 +32,24 @@ $(document).ready(function(){
     * */
 
     fetch(randomUsersUrl).then(res => res.json()).then(insertEmployees);
+
+    /*
+    * Event Listener
+    * */
+
+    $('header input').on("input", function () {
+        let searchFor = $(this).val().toLowerCase();
+        if(searchFor.length > 0){
+            $(".employee-item").each(function () {
+                const currentEmployee = $(this).find('h3').text().toLowerCase();
+                if(currentEmployee.indexOf(searchFor) >= 0){
+                    $(this).show();
+                }else {
+                    $(this).hide();
+                }
+            });
+        }else {
+            $(".employee-item").show();
+        }
+    });
 });
