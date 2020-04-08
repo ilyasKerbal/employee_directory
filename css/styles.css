@@ -37,7 +37,7 @@ header input {
     width: 80%;
     max-width: 450px;
     margin: 1rem 0 2rem 0;
-    padding: .5rem;
+    padding: .7rem;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -103,6 +103,13 @@ footer {
     margin-top: 1rem;
 }
 
+.details {
+    text-align: center;
+}
+
+.details img {
+    border-radius: 50%;
+}
 
 @media (min-width: 768px) {
     .employees-list {

@@ -23,6 +23,17 @@ $(document).ready(function(){
                     <p>${data.email}</p>
                     <p>${data.location.city}</p>
                 </div>
+                <div style="display: none;" class="details-box">
+                    <div class="details">
+                        <img src="${data.picture.large}" alt="${data.name.first}' profile picture">
+                         <h3>${data.name.first} ${data.name.last}</h3>
+                         <p>${data.email}</p>
+                         <hr>
+                         <p>${data.phone}</p>
+                         <p>${data.location.street.number} ${data.location.street.name}, ${data.location.city} ${data.location.postcode}, ${data.location.state} ${data.location.country}</p>
+                         <p><strong>Birth date:</strong> ${data.dob.date.substr(0, 10)}</p>
+                     </div>
+                </div>
             </div>
         `;
     }
@@ -55,6 +66,18 @@ $(document).ready(function(){
             statusParagraph.style.display = "";
         }else{
             statusParagraph.style.display = "none";
+        }
+    });
+
+    $('.employees-list').on('click', function (event) {
+        if(event.target.className !== "employees-list"){
+            let content = "";
+            if(event.target.className !== "employee-item"){
+                content = $(event.target).parents('.employee-item').find(".details-box").html();
+            }else{
+                content = $(event.target).find(".details-box").html();
+            }
+            $.fancybox.open(content);
         }
     });
 });
